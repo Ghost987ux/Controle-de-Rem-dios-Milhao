@@ -1,21 +1,28 @@
-/* Geral */
-body {
-  font-family: Arial, sans-serif;
+/* ========= RESET ========= */
+* {
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  box-sizing: border-box;
 }
 
-/* Tela login */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ========= LOGIN SCREEN ========= */
 #login-screen {
-  position: relative;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
-  background: #0d1b2a;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(circle at center, #1b263b, #0d1b2a);
+  position: relative;
+  overflow: hidden;
 }
 
 #particles-canvas {
@@ -23,7 +30,6 @@ body {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  display: block;
   z-index: 0;
 }
 
@@ -31,97 +37,137 @@ body {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: white;
-  padding: 40px 60px;
-  background: rgba(13, 27, 42, 0.85);
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  user-select: none;
+  padding: 50px 70px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
+  animation: fadeIn 1.2s ease forwards;
 }
 
 .login-content h1 {
-  font-weight: 700;
-  font-size: 3rem;
-  margin-bottom: 30px;
-  letter-spacing: 2px;
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00aaff, #ff00cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* Botão */
 #btn-entrar {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding: 15px 60px;
-  cursor: pointer;
   border: none;
-  border-radius: 8px;
-  background: #00aaff;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00aaff, #0077ff);
   color: white;
-  box-shadow: 0 6px 15px rgba(0,170,255,0.5);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 170, 255, 0.5);
+  transition: all 0.3s ease;
 }
 
 #btn-entrar:hover {
-  background: #008fcc;
-  box-shadow: 0 8px 20px rgba(0,140,204,0.8);
+  background: linear-gradient(135deg, #0077ff, #00aaff);
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 170, 255, 0.8);
 }
 
-/* Header e navegação */
+/* ========= HEADER ========= */
 header {
-  background: #343a40;
+  background: linear-gradient(90deg, #1b263b, #0d1b2a);
   color: white;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
+/* ========= NAV ========= */
 nav {
   display: flex;
   justify-content: center;
-  background: #ddd;
-  padding: 10px;
   flex-wrap: wrap;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  padding: 15px;
+  gap: 12px;
 }
 
 nav button {
-  margin: 5px 10px;
-  padding: 8px 15px;
+  padding: 10px 18px;
   border: none;
-  background: #bbb;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #555, #333);
+  color: #eee;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 nav button.active {
-  background: #666;
+  background: linear-gradient(135deg, #00aaff, #0077ff);
+  box-shadow: 0 0 15px rgba(0,170,255,0.7);
   color: white;
 }
 
 nav button:hover:not(.active) {
-  background: #999;
+  background: linear-gradient(135deg, #666, #444);
+  transform: translateY(-2px);
 }
 
-/* Tabelas */
+/* ========= TABELAS ========= */
 table {
   width: 95%;
-  margin: 20px auto;
+  margin: 25px auto;
   border-collapse: collapse;
-  background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  color: #fff;
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
+th {
+  background: linear-gradient(135deg, #0077ff, #00aaff);
+  padding: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+tr:hover td {
+  background: rgba(255,255,255,0.07);
+  transition: 0.3s;
 }
 
 .low {
-  background: #ffdddd;
+  background: rgba(255, 77, 77, 0.3) !important;
 }
 
-/* Gráfico */
+/* ========= GRÁFICO ========= */
 #grafico-content {
   max-width: 1000px;
-  margin: 0 auto 40px;
-  position: relative;
+  margin: 40px auto;
   height: 500px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+/* ========= ANIMAÇÕES ========= */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
 }
